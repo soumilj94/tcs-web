@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Help Login</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <?php
+    require('connection.php');  
+    session_start();
+    if (isset($_POST['ivrs'])) {
+        $username = stripslashes($_REQUEST['ivrs']); 
+        $username = mysqli_real_escape_string($con, $username);
+        
+        $password = stripslashes($_REQUEST['password']);
+        $password = mysqli_real_escape_string($con, $password);
+        
+        $query    = "SELECT * FROM `login` WHERE `IVRSNo.`='N3376028724' AND `Password`='12345678';";
+        $result = mysqli_query($con, $query); //or die(mysql_error())
+        
+        $rows = mysqli_num_rows($result);
+        if ($rows == 1) {
+            $_SESSION['ivrs'] = $username;
+            header("Location:service.html");
+        } else {
+            echo "<div class='form1'>
+                  <h5>Incorrect Username/password.</h5><br/>
+                  <p class='link'>Click here to <a href='home.php'>Login</a> again.</p>
+                  </div>";  
+        }
+    } 
+    else {
+    }
+?>
+    
+    <h1>City Help Portal</h1>
+    <div class="borders">
+        <div class="border-one">
+        <form method="post">
+            <div class="input-field-parent">
+                <input type="text" maxlength="11" class="input-field" id="inputField" 
+                  autocomplete="off" placeholder="Enter IVRS" name="ivrs"/>
+              </div>
+
+              <div class="pswd-field-parent">
+                <input type="password" maxlength="8" class="pswd-field" id="pswdField" 
+                  autocomplete="off" placeholder="Enter Password" name="password"/>
+              </div>
+
+              <input class="submit" id="submit" type="submit" value="Login"/>
+        </form>
+        </div>
+
+    </div>
+</body>
+</html>

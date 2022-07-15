@@ -1,41 +1,31 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="style.css"/>
-        <script type="text/javascript" src="handle.js"></script>
-    </head>
-    <body>
-        <div class="div">
-            <div class="searchbox">  
-                <form>   
-                <input type="text" placeholder=" Search...." name="search">   
-                <button type="submit">Submit</button>   
-                </form>  
-            </div> 
-        </div>
-        <div class="profile">
-            <!--<img src="images/profile.jpg" alt="">-->
-            <span class="admin_name">Username</span>
-          </div>
-        <div class="sidebar">
-            <div class="powerhouse">
-                <p class="power">Powerhouse</p></div>
-            <div class="contribute"><p class="power">Contribute</p></div>
-        </div>
-        <img src="https://www.bis.gov.in/wp-content/uploads/2018/11/online-complaint-1.jpg" alt="fuhhh" class="img">
-        <div class="complain0"><p class="powerc"> No Power Complaint</p></div>   
-        <div class="complain1"><p class="powerc">Short Circuit Complaint</p></div> 
-        <div class="complain2"><p class="powerc">Power Voltage Complaint</p></div> 
-        <div class="complain3"><p class="powerc">Meter not working Complaint</p></div> 
-        <div class="complain4"><p class="powerc">Frequent Power cut Complaint</p></div> 
-        <div class="complain5"><p class="powerc">Street Light Complaint</p></div> 
-        <div class="complain6"><p class="powerc">Electricity line/pole damage <br><br> Complaint</p></div> 
-        <div class="complain7"><p class="powerc">Installing Meter Complaint</p></div> 
-        <div class="complain8"><p class="powerc">Wrong Bill Issued Complaints</p></div> 
-        <div class="complain9"><p class="powerc">Huge Amount in Bill Complaint</p></div> 
-        <div class="complaina"><p class="powerc">Electicity Bill Complaints<br><br> related to flats</p></div> 
-        <div class="complainb"><p class="powerc">FLuctuation Complaint</p></div>
-        <div class="bg-modal">
-            <div class="modal-content"></div>
-        </div> 
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Service</title>
+</head>
+<body>
+    <div class="container">
+        <input onkeyup="filter()" type="search" id="search" placeholder="Search...">
+        <ul id="menu" class="card-menu">
+            <div class="card"><li><a href="#">No Electricity</a></li></div>
+            <div class="card"><li><a href="#">Short Circuit</a></li></div>
+            <div class="card"><li><a href="#">Voltage Issue</a></li></div>
+            <div class="card"><li><a href="#">Meter Issue</a></li></div>
+            <div class="card"><li><a href="#">Frequent Power Cut</a></li></div>
+            <div class="card"><li><a href="#">Street Light Issue</a></li></div>
+            <div class="card"><li><a href="#">Damaged Pole</a></li></div>
+            <div class="card"><li><a href="#">Meter Installation</a></li></div>
+            <div class="card"><li><a href="#">Wrong Bill Issued</a></li></div>
+            <div class="card"><li><a href="#">Wrong amount in Bill</a></li></div>
+            <div class="card"><li><a href="#">Electricity Fluctuation</a></li></div>
+            <div class="card"><li><a href="#">Theft of Electricity</a></li></div>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="search.js"></script>
+</body>
 </html>

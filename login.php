@@ -39,7 +39,7 @@
     <h1>City Help Portal</h1>
     <div class="borders">
         <div class="border-one">
-        <form method="post">
+        <form method="post" class="form" id="form" onsubmit="return validateForm()">
             <div class="input-field-parent">
                 <input type="text" maxlength="11" class="input-field" id="inputField" 
                   autocomplete="off" placeholder="Enter IVRS" name="ivrs"/>
@@ -55,5 +55,41 @@
         </div>
 
     </div>
+
+    <script>
+        let inputField = document.getElementById("inputField");
+        let pswdField = document.getElementById("pswdField");
+        let flag = 1;
+
+        function validateForm(){
+            // For Input field
+            if(inputField.value == ""){
+                // console.log("username empty");
+                alert("Please Enter your IVRS Number!");
+                flag = 0;
+            }
+            else if(inputField.value.length < 11){
+            alert("Invalid IVRS format!");
+            flag = 0;
+            }
+
+            // For Password field
+            if(pswdField.value == ""){
+                alert("Please enter your Password!");
+                flag = 0
+            }
+            else if(pswdField.value.length < 8){
+                alert("Invalid Password format!");
+            }
+
+            if(flag){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+    </script>
 </body>
 </html>

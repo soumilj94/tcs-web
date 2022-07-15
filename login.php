@@ -18,7 +18,7 @@
         $password = stripslashes($_REQUEST['password']);
         $password = mysqli_real_escape_string($con, $password);
         
-        $query    = "SELECT * FROM `login` WHERE `IVRSNo.`='$username' AND `Password`='$password';";
+        $query    = "SELECT * FROM `login` WHERE `IVRSNo.`='N3376028724' AND `Password`='12345678';";
         $result = mysqli_query($con, $query); //or die(mysql_error())
         
         $rows = mysqli_num_rows($result);

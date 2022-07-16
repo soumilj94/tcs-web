@@ -1,8 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 body{
     margin: 0;
     padding: 0;
 }
+.sidebar{
+    border: 1px solid black;
+    width: 20px;
+    height: 50vh;
+}
+.search_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+.search{
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 2px solid #FF0053;
+    font-size: 30px;
+    font-family: 'oxanium';
+    color: #FF0053;
+    text-transform: lowercase;
+    outline: none;
+    caret-color: #FF0053;
+    width: 12em;
+}
+.search:focus{
+    border-bottom: 3px solid #FF0053;
+}
+input::placeholder{
+    font-size: 20px;
+    text-transform: none;
+}
+
 .card-menu{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30vh,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
+    grid-gap: 5vh;
+    list-style-type: none;
+    padding-left: 30em;
+    padding-top: 10vh;
+}
+a:link{
+    text-decoration: none;
+    color: #FF0053;
+}
+a:visited{
+    text-decoration: none;
+    color: #FF0053;
+}
+a:hover{
+    text-decoration: none;
+    color: blueviolet;
+}
+a:active{
+    text-decoration: none;
+    color: aqua;
+}
+.card{
+    text-align: center;
+    font-family: 'oxanium';
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 25vh;
+    height: 20vh;
+    border-radius: 1vh;
 }

@@ -4,9 +4,16 @@ body{
     padding: 0;
 }
 .sidebar{
+    position: absolute;
     border: 1px solid black;
-    width: 20px;
-    height: 50vh;
+    width: 240px;
+    height: 611px;
+    top: 107px;
+    left: -6px;
+    border-radius: 7px;
+    display:flex;
+    justify-content: centre;
+    align-items: centre;
 }
 .search_container{
     display: flex;
@@ -71,5 +78,18 @@ a:active{
     border: 1px solid black;
     width: 25vh;
     height: 20vh;
+    border-radius: 1vh;
+}
+.crd{
+    text-align: center;
+    font-family: 'oxanium';
+    text-decoration: none;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22vh;
+    height: 9vh;
     border-radius: 1vh;
 }

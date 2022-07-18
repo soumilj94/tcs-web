@@ -19,17 +19,23 @@
         $password = mysqli_real_escape_string($con, $password);
         
         $query    = "SELECT * FROM `login` WHERE `IVRSNo.`='$username' AND `Password`='$password';";
-        $result = mysqli_query($con, $query); //or die(mysql_error())
         
+        $result = mysqli_query($con, $query); //or die(mysql_error())
         $rows = mysqli_num_rows($result);
-        if ($rows == 1) {
+        if($rows == 1){
             $_SESSION['ivrs'] = $username;
             header("Location:service.html");
-        } else {
-            echo "<div class='form1'>
-                  <h5>Incorrect Username/password.</h5><br/>
-                  <p class='link'>Click here to <a href='home.php'>Login</a> again.</p>
-                  </div>";  
+
+        }
+        
+        else {
+        }?>
+        <script type="text/javascript">
+            alert("Invalid Credentials!");
+        </script>
+        <?php
+        if($rows==1 && $username=='N3336001400' && $password=='85265471'){//Utility Officer credentials
+            header("Location:srch.html");
         }
     } 
     else {
@@ -81,6 +87,7 @@
             else if(pswdField.value.length < 8){
                 alert("Invalid Password format!");
             }
+
 
             if(flag){
                 return true;

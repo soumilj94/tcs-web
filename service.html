@@ -10,28 +10,442 @@
 <body>
     <div class="container">
         <div class="search_container"><input onkeyup="filter()" type="search" class="search" id="search" placeholder="Search..."></div>
-        <ul id="menu" class="card-menu">
-            <li><div class="card"><a href="#">No Electricity</a></div></li>
-            <li><div class="card"><a href="#">Short Circuit</a></div></li>
-            <li><div class="card"><a href="#">Voltage Issue</a></div></li>
-            <li><div class="card"><a href="#">Meter Issue</a></div></li>
-            <li><div class="card"><a href="#">Frequent Power Cut</a></div></li>
-            <li><div class="card"><a href="#">Street Light Issue</a></div></li>
-            <li><div class="card"><a href="#">Damaged Pole</a></div></li>
-            <li><div class="card"><a href="#">Meter Installation</a></div></li>
-            <li><div class="card"><a href="#">Wrong Bill Issued</a></div></li>
-            <li><div class="card"><a href="#">Wrong amount in Bill</a></div></li>
-            <li><div class="card"><a href="#">Electricity Fluctuation</a></div></li>
-            <li><div class="card"><a href="#">Theft of Electricity</a></div></li>
+        <ul id="menu" class="card-menu">   
+            <li><div class="card"><a onclick="openForm()" href="javascript:opeForm();">No Electricity</a></div></li>
+            <li><div class="card"><a onclick="openForm1()" href="javascript:opeForm();">Short Circuit</a></div></li>
+            <li><div class="card"><a onclick="openForm2()" href="javascript:opeForm();">Voltage Issue</a></div></li>
+            <li><div class="card"><a onclick="openForm3()" href="javascript:opeForm();">Meter Issue</a></div></li>
+            <li><div class="card"><a onclick="openForm4()" href="javascript:opeForm();">Frequent Power Cut</a></div></li>
+            <li><div class="card"><a onclick="openForm5()" href="javascript:opeForm();">Street Light Issue</a></div></li>
+            <li><div class="card"><a onclick="openForm6()" href="javascript:opeForm();">Damaged Pole</a></div></li>
+            <li><div class="card"><a onclick="openForm7()" href="javascript:opeForm();">Meter Installation</a></div></li>
+            <li><div class="card"><a onclick="openForm8()" href="javascript:opeForm();">Wrong Bill Issued</a></div></li>
+            <li><div class="card"><a onclick="openForm9()" href="javascript:opeForm();">Wrong amount in Bill</a></div></li>
+            <li><div class="card"><a onclick="openForm10()" href="javascript:opeForm();">Electricity Fluctuation</a></div></li>
+            <li><div class="card"><a onclick="openForm11()" href="javascript:opeForm();">Theft of Electricity</a></div></li>
         </ul>
     </div>
     <div class="sidebar">
         <ul id="sidbr" class="side-bar">
-            <div class="crd"><a href="#">Power House</a></div>
+            <div class="crd"><a href="#"">Power House</a></div>
             <div class="crd"><a href="#">Contribute</a></div>
         </ul>
     </div>
+    <!-- <input class="jk" type="button" onclick="openForm()"/> -->
 
     <script type="text/javascript" src="search.js"></script>
+
+    <div class="form-popup" id="myForm">
+        <form class="form-container" action="zero.php" method="post">
+            <b class="head">No Electricity</b><br><br>
+
+            <span class="ivr">Name</span><br>
+            <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+            <!-- <label for="psw"><b>Password</b></label> -->
+            <span class="ivr">IVRS No.</span><br>
+            <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" id="ivr" required><br>
+
+            <span class="ivr">Mobile No.</span><br>
+            <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+            <span class="ivr">Address</span><br>
+            <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+            <span class="ivr">Describe Your Complaint</span><br>
+            <textarea  class="box1" name="complain" required></textarea><br>
+
+            <button type="submit" class="btn">SUBMIT</button>
+            <!-- <button type="button" class="btn cancel" >Close</button> -->
+        </form>
+    </div>
+    </body>
+
+    <script>
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+
+<div class="form-popup" id="myForm1">
+    <form class="form-container">
+        <b class="head">Short Circuit</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm1()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm1() {
+document.getElementById("myForm1").style.display = "block";
+}
+
+function closeForm1() {
+document.getElementById("myForm1").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm2">
+    <form class="form-container">
+        <b class="head">Voltage Issue</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm2()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm2() {
+document.getElementById("myForm2").style.display = "block";
+}
+
+function closeForm2() {
+document.getElementById("myForm2").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm3">
+    <form class="form-container">
+        <b class="head">Meter Issue</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm3()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm3() {
+document.getElementById("myForm3").style.display = "block";
+}
+
+function closeForm3() {
+document.getElementById("myForm3").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm4">
+    <form class="form-container">
+        <b class="head">Frequent Power Cut</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm4()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm4() {
+document.getElementById("myForm4").style.display = "block";
+}
+
+function closeForm4() {
+document.getElementById("myForm4").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm5">
+    <form class="form-container">
+        <b class="head">Street Light Issue</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm5()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm5() {
+document.getElementById("myForm5").style.display = "block";
+}
+
+function closeForm5() {
+document.getElementById("myForm5").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm6">
+    <form class="form-container">
+        <b class="head">Damaged Pole</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm6()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm6() {
+document.getElementById("myForm6").style.display = "block";
+}
+
+function closeForm6() {
+document.getElementById("myForm6").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm7">
+    <form class="form-container">
+        <b class="head">Meter Installation</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm7()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm7() {
+document.getElementById("myForm7").style.display = "block";
+}
+
+function closeForm7() {
+document.getElementById("myForm7").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm8">
+    <form class="form-container">
+        <b class="head">Wrong Bill Issued</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm8()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm8() {
+document.getElementById("myForm8").style.display = "block";
+}
+
+function closeForm8() {
+document.getElementById("myForm8").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm9">
+    <form class="form-container">
+        <b class="head">Wrong Amount In Bill</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm9()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm9() {
+document.getElementById("myForm9").style.display = "block";
+}
+
+function closeForm9() {
+document.getElementById("myForm9").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm10">
+    <form class="form-container">
+        <b class="head">Electricity Fluctuation</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm10()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm10() {
+document.getElementById("myForm10").style.display = "block";
+}
+
+function closeForm10() {
+document.getElementById("myForm10").style.display = "none";
+}
+</script>
+
+<div class="form-popup" id="myForm11">
+    <form class="form-container">
+        <b class="head">Theft of Electricty</b><br><br>
+
+        <span class="ivr">Name</span><br>
+        <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
+
+        <!-- <label for="psw"><b>Password</b></label> -->
+        <span class="ivr">IVRS No.</span><br>
+        <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
+
+        <span class="ivr">Mobile No.</span><br>
+        <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
+
+        <span class="ivr">Address</span><br>
+        <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
+
+        <span class="ivr">Describe Your Complaint</span><br>
+        <textarea  class="box1" name="complain" required></textarea><br>
+
+        <button type="submit" class="btn" onclick="closeForm11()">SUBMIT</button>
+        <!-- <button type="button" class="btn cancel" >Close</button> -->
+    </form>
+</div>
+<script>
+function openForm11() {
+document.getElementById("myForm11").style.display = "block";
+}
+
+function closeForm11() {
+document.getElementById("myForm11").style.display = "none";
+}
+</script>
+
+
+    
 </body>
 </html>

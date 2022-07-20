@@ -36,7 +36,7 @@
     <script type="text/javascript" src="search.js"></script>
 
     <div class="form-popup" id="myForm">
-        <form class="form-container" action="zero.php" method="post">
+        <form class="form-container" action="zero.php">
             <b class="head">No Electricity</b><br><br>
 
             <span class="ivr">Name</span><br>
@@ -56,6 +56,7 @@
             <textarea  class="box1" name="complain" required></textarea><br>
 
             <button type="submit" class="btn">SUBMIT</button>
+            <button type="button" class="back" onclick="closeForm()">BACK</button>
             <!-- <button type="button" class="btn cancel" >Close</button> -->
         </form>
     </div>
@@ -72,7 +73,7 @@
     </script>
 
 <div class="form-popup" id="myForm1">
-    <form class="form-container">
+    <form class="form-container" action="one.php">
         <b class="head">Short Circuit</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -91,7 +92,8 @@
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm1()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm1()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -105,8 +107,8 @@ document.getElementById("myForm1").style.display = "none";
 }
 </script>
 
-<div class="form-popup" id="myForm2">
-    <form class="form-container">
+<div class="form-popup" id="myForm2" >
+    <form class="form-container" action="two.php">
         <b class="head">Voltage Issue</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -125,7 +127,8 @@ document.getElementById("myForm1").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm2()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm2()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -139,8 +142,8 @@ document.getElementById("myForm2").style.display = "none";
 }
 </script>
 
-<div class="form-popup" id="myForm3">
-    <form class="form-container">
+<div class="form-popup" id="myForm3" >
+    <form class="form-container" action="three.php">
         <b class="head">Meter Issue</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -159,7 +162,8 @@ document.getElementById("myForm2").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm3()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm3()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -173,8 +177,8 @@ document.getElementById("myForm3").style.display = "none";
 }
 </script>
 
-<div class="form-popup" id="myForm4">
-    <form class="form-container">
+<div class="form-popup" id="myForm4" >
+    <form class="form-container" action="four.php">
         <b class="head">Frequent Power Cut</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -193,7 +197,8 @@ document.getElementById("myForm3").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm4()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm4()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -207,8 +212,8 @@ document.getElementById("myForm4").style.display = "none";
 }
 </script>
 
-<div class="form-popup" id="myForm5">
-    <form class="form-container">
+<div class="form-popup" id="myForm5" action="five.php">
+    <form class="form-container" action="five.php">
         <b class="head">Street Light Issue</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -227,7 +232,8 @@ document.getElementById("myForm4").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm5()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm5()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -242,7 +248,7 @@ document.getElementById("myForm5").style.display = "none";
 </script>
 
 <div class="form-popup" id="myForm6">
-    <form class="form-container">
+    <form class="form-container"  action="six.php">
         <b class="head">Damaged Pole</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -261,7 +267,8 @@ document.getElementById("myForm5").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm6()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm6()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -276,7 +283,7 @@ document.getElementById("myForm6").style.display = "none";
 </script>
 
 <div class="form-popup" id="myForm7">
-    <form class="form-container">
+    <form class="form-container"  action="seven.php">
         <b class="head">Meter Installation</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -295,7 +302,8 @@ document.getElementById("myForm6").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm7()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm7()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -310,7 +318,7 @@ document.getElementById("myForm7").style.display = "none";
 </script>
 
 <div class="form-popup" id="myForm8">
-    <form class="form-container">
+    <form class="form-container"  action="eight.php">
         <b class="head">Wrong Bill Issued</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -329,7 +337,8 @@ document.getElementById("myForm7").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm8()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm8()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -344,7 +353,7 @@ document.getElementById("myForm8").style.display = "none";
 </script>
 
 <div class="form-popup" id="myForm9">
-    <form class="form-container">
+    <form class="form-container"  action="nine.php">
         <b class="head">Wrong Amount In Bill</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -363,7 +372,8 @@ document.getElementById("myForm8").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm9()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm9()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -378,7 +388,7 @@ document.getElementById("myForm9").style.display = "none";
 </script>
 
 <div class="form-popup" id="myForm10">
-    <form class="form-container">
+    <form class="form-container"  action="ten.php">
         <b class="head">Electricity Fluctuation</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -397,7 +407,8 @@ document.getElementById("myForm9").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm10()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm10()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
@@ -412,7 +423,7 @@ document.getElementById("myForm10").style.display = "none";
 </script>
 
 <div class="form-popup" id="myForm11">
-    <form class="form-container">
+    <form class="form-container"  action="eleven.php">
         <b class="head">Theft of Electricty</b><br><br>
 
         <span class="ivr">Name</span><br>
@@ -431,7 +442,8 @@ document.getElementById("myForm10").style.display = "none";
         <span class="ivr">Describe Your Complaint</span><br>
         <textarea  class="box1" name="complain" required></textarea><br>
 
-        <button type="submit" class="btn" onclick="closeForm11()">SUBMIT</button>
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="back" onclick="closeForm11()">BACK</button>
         <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>

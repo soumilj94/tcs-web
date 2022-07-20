@@ -194,6 +194,23 @@ body {font-family: Arial, Helvetica, sans-serif;}
     color: ghostwhite;
     font-weight: bold;
 }
+.back{
+    position: relative;
+    top: 25px;
+    left: 784px;
+
+
+    height: 38px;
+    width: 89px;
+    background-color: darkblue;
+    border: 0px;
+    border-radius: 4px;
+    font-family: sans-serif;
+    color: ghostwhite;
+    font-weight: bold;
+
+
+}
 
 /* Add styles to the form container */
 /* .form-container {

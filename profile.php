@@ -1,12 +1,10 @@
 <?php
     require('connection.php');
     session_start();
+    $user = $_SESSION['ivrs'];
     if (isset($_REQUEST['name'])) {
         $name = stripslashes($_REQUEST['name']);
         $name = mysqli_real_escape_string($con, $name);
-        
-        $ivrs = stripslashes($_REQUEST['IVRS']);
-        $ivrs = mysqli_real_escape_string($con, $ivrs);
 
         $Mob = stripslashes($_REQUEST['mobile']);
         $Mob = mysqli_real_escape_string($con, $Mob);
@@ -14,10 +12,10 @@
         $address = stripslashes($_REQUEST['address']);
         $address = mysqli_real_escape_string($con, $address);
 
-        $query    = "INSERT INTO `customer` (`Name`, `IVRSNo.`, `Mobile No.`, `Address`) VALUES ('$name', '$ivrs', '$Mob', '$address')";
+        $query    = "UPDATE `customer` SET `Name`='$name',`Mobile No.`='$Mob',`Address`='$address' WHERE `IVRSNo.`='$user'";
         if (mysqli_query($con, $query)) {
             echo '<script>';
-            echo 'alert("Complaint Registered Successfully");';
+            echo 'alert("Data Updated Successfully");';
             echo 'location = "service.html";';
             echo '</script>';
         }else{
@@ -34,12 +32,12 @@
     <div class="form-popup" id="myForm1">
         <form class="form-container" method="post">
             <b class="head">Your Profile</b><br><br>
+
+            <span class="ivr">IVRS No.</span><br>
+            <h3><?php echo $_SESSION['ivrs'];?></h3><br>
             
             <span class="ivr">Name</span><br>
             <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
-
-            <span class="ivr">IVRS No.</span><br>
-            <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
             <span class="ivr">Mobile No.</span><br>
             <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>

@@ -5,10 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City Help Login</title>
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="login.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;500;600;700;800&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <?php
+<?php
     require('connection.php');  
     session_start();
     if (isset($_POST['ivrs'])) {
@@ -42,24 +43,27 @@
     }
 ?>
     
-    <h1>City Help Portal</h1>
-    <div class="borders">
-        <div class="border-one">
+    <div class="background-image">
+        <div class="header-one"></div>
+        <div class="abt"><a class="about" href="about.html">About</a></div>
+        <div class="cts"><a class="contact" href="contact.html">Contact</a></div>
+        <h1>City Help Portal</h1>
+        <img class="login-logo" src="./login-logo.png"/>
         <form method="post" class="form" id="form" onsubmit="return validateForm()">
-            <div class="input-field-parent">
-                <input type="text" maxlength="11" class="input-field" id="inputField" 
-                  autocomplete="off" placeholder="Enter IVRS" name="ivrs"/>
-              </div>
+            <div class="card">
+                <img class="user" src="user.png"/>
+                
+                <input type="text" maxlength="11" class="input-field" id="inputField"
+                autocomplete="off" placeholder="Enter IVRS" name="ivrs"/>
 
-              <div class="pswd-field-parent">
                 <input type="password" maxlength="8" class="pswd-field" id="pswdField" 
                   autocomplete="off" placeholder="Enter Password" name="password"/>
-              </div>
 
-              <input class="submit" id="submit" type="submit" value="Login"/>
+                <input class="submit" id="submit" type="submit" value="Login"/>
+
+                </div>
+            </div>
         </form>
-        </div>
-
     </div>
 
     <script>

@@ -1,120 +1,170 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
-
 body{
     margin: 0;
     padding: 0;
-    background-color: #dff6ff;
+    overflow: hidden;
+    background-color: #232425;
+}
+.background-image{
+    background-image: url(./electricpoles.png);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.header-one{
+    border: 1px solid transparent;
+    width: 100%;
+    height: 4vh;
 }
 h1{
-    padding-top: 4vh;
+    margin-top: 0;
+    margin-left: 4vh;
+    color: #FFFFFF;
+    width: 38vh;
+    font-family: 'Oxanium', cursive;
+    font-size: 7.5vh;
+    font-weight: 500;
+    letter-spacing: .7vh;
+    user-select: none;
+}
+.abt{
+    /* border: 1px solid white; */
+    width: fit-content;
+    margin-left: 100rem;
+}
+a{
+    text-decoration: none;
+    color: white;
     font-family: 'Oxanium';
-    text-align: center;
-    font-size: 5vh;
-    color: #FF0053;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
 }
-.borders{
-    display: flex;
-    justify-content: center;
-    padding-top: 8vh;
+a:hover{
+    color: #00DCFF;
 }
-.border-one{
-    width: 70vh;
-    height: 60vh;
-    border: 1px solid black;
+.cts{
+    /* border: 1px solid white; */
+    width: fit-content;
+    margin-left: 110rem;
+    margin-top: -1.6rem;
+}
+.login-logo{
+    width: fit-content;
+    user-select: none;
+}
+.card{
+    border: 1px solid #4B4B4B;
+    border-radius: 0;
+    width: 420px;
+    height: 500px;
+    margin-left: 69.8rem;
+    margin-top: -450px;
+    transition: ease-in-out 200ms;
     position: absolute;
+    max-width: 420px;
+    max-height: 500px;
 }
-.input-field-parent{
-    display: flex;
-    justify-content: center;
+.card:hover{
+    border: 2px solid #00DCFF;
+    border-radius: 4px;
+    box-shadow: 3vh 3vh 2vh;
+}
+.user{
+    background: #232425;
+    margin-top: -60px;
+    margin-left: 160px;
+    max-width: 100px;
+    width: 100px;
 }
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.input-field{
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid black;
-    font-size: 30px;
-    font-family: 'Oxanium';
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #dff6ff;
-    color: #FF0053;
-    margin-top: 15%;
-    outline: none;
-    transition: 150ms ease-in-out;
-    user-select: none;
-}
-.input-field:hover{
-    border-bottom: 2px solid black;
-    cursor: text;
-}
-.input-field:focus{
-    border-bottom: 2px solid #FF0053;
-}
-input:hover::placeholder{
-    color: black;
-}
-input:focus::placeholder{
+input:focus::-webkit-input-placeholder {
     opacity: 0;
+    -webkit-transition: 150ms ease-in-out;
+            transition: 150ms ease-in-out;
 }
 input::placeholder{
     font-size: 20px;
     text-transform: none ;
 }
 
-.pswd-field-parent{
-    display: flex;
-    justify-content: center;
+.input-field{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 25px;
+    font-family: 'oxanium';
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #232425;
+    color: #00DCFF;
+    margin-top: 7rem;
+    margin-left: 3.8rem;
+    outline: none;
+    transition: 200ms ease-in-out;
+    user-select: none;
+    max-height: 30px;
+    caret-color: #00DCFF;
 }
+.input-field:hover{
+    border-bottom: 2px solid #bbbbbb;
+    cursor: text;
+}
+.input-field:focus{
+    border-bottom: 3px solid #00DCFF;
+}
+
 .pswd-field{
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid black;
-    font-size: 30px;
-    font-family: 'Oxanium';
+    font-size: 25px;
+    font-family: 'oxanium';
     text-align: center;
     text-transform: uppercase;
-    background-color: #dff6ff;
-    color: #FF0053;
-    margin-top: 15%;
+    background-color: #232425;
+    color: #00DCFF;
+    margin-top: 4rem;
+    margin-left: 3.8rem;
     outline: none;
-    transition: 150ms ease-in-out;
+    transition: 200ms ease-in-out;
     user-select: none;
+    max-height: 30px;
 }
 .pswd-field:hover{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #bbbbbb;
     cursor: text;
 }
 .pswd-field:focus{
-    border-bottom: 2px solid #FF0053;
+    border-bottom: 3px solid #00DCFF;
 }
 
 .submit{
-    position: absolute;
-    margin-top: 15%;
-    margin-left: 32%;
+    position: relative;
+    margin-top: 3.8rem;
+    margin-left: 4.5rem;
     -webkit-appearance: none;
-    background-color: #dff6ff;
-    border: 0.8px solid #FF0053;
-    color: #FF0053;
-    font-size: 22px;
-    text-align: center;
+    background-color: #232425;
+    border: 2px solid #00DCFF;
+    color: #00DCFF;
+    font-size: 25px;
     font-family: 'oxanium';
-    width: 25vh;
-    height: 6vh;
-    transition: 100ms ease-in-out;
+    width: 270px;
+    height: 60px;
+    transition: 200ms ease-in-out;
 }
 .submit:hover{
-    background-color: #FF0053;
-    color: #ffffff;
-    font-family: 'oxanium';
+    background-color: #00DCFF;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: 'Oxanium';
     cursor: pointer;
 }
-.submit:focus{
-    background-color: #a10036;
-    border: 0.8px solid #a10036;
+.submit:active{
+    background-color: #00778a;
+    color: #FFFFFF;
+    cursor: pointer;
 }

@@ -45,7 +45,7 @@ if($result){
                 <th>$mob</th>
                 <th>$address</th>
                 <th>$complain</th>
-                <th><input type='checkbox' onclick='sub.php'></th>
+                <th><a href='delet.php'>Succes</a></th>
             </tr>");
             }
             

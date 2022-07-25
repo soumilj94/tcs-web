@@ -36,7 +36,7 @@
         </script>
         <?php
         if($rows==1 && $username=='N3336001400' && $password=='85265471'){//Utility Officer credentials
-            header("Location:srch.html");
+            header("Location:util.php");
         }
     } 
     else {

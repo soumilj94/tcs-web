@@ -28,27 +28,37 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+    <head><title>Profile</title>
+        <link rel="stylesheet" href="profile.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
 <body>
-    <div class="form-popup" id="myForm1">
+<div class="background-image">
+<div class="header-one"></div>
+<div class="abt"><a class="about" href="about.html">About</a></div>
+<div class="cts"><a class="contact" href="contact.html">Contact</a></div>
+<img class="logo" src="./logo.png"/>
+        <div class="card">
+        <img class="user" src="user.png"/>
+        <div class="form-popup" id="myForm1">
         <form class="form-container" method="post">
             <b class="head">Your Profile</b><br><br>
 
             <span class="ivr">IVRS No.</span><br>
-            <h3><?php echo $_SESSION['ivrs'];?></h3><br>
+            <h2 class="ivrsno"><?php echo $_SESSION['ivrs'];?></h2>
             
-            <span class="ivr">Name</span><br>
             <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-            <span class="ivr">Mobile No.</span><br>
             <input class="box" type="text" placeholder="Enter Mobile No." name="mobile" required><br>
 
-            <span class="ivr">Address</span><br>
             <input class="box" type="text" placeholder="Enter Your Address" name="address" required><br>
 
             <button type="submit" class="btn">SUBMIT</button>
-            <button type="button" class="back" onclick="closeForm1()">BACK</button>
+            <a href="service.html"><button type="button" class="back" >BACK</button></a>
         </form>
     </div>
+    </div>
+</div>
     <script>
     function openForm1() {
         document.getElementById("myForm1").style.display = "block";

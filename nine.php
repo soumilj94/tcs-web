@@ -1,12 +1,10 @@
 <?php
     require('connection.php');
     session_start();
+    $user = $_SESSION['ivrs'];
     isset($_POST['name']);
     $name = stripslashes($_REQUEST['name']);
     $name = mysqli_real_escape_string($con, $name);
-    isset($_POST['IVRS']);    
-    $ivrs = stripslashes($_REQUEST['IVRS']);
-    $ivrs = mysqli_real_escape_string($con, $ivrs);
     isset($_POST['mobile']);
     $Mob = stripslashes($_REQUEST['mobile']);
     $Mob = mysqli_real_escape_string($con, $Mob);
@@ -17,7 +15,7 @@
     $complain = stripslashes($_REQUEST['complain']);
     $complain = mysqli_real_escape_string($con, $complain);
 
-        $query    = "INSERT INTO `complaint` (`Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`) VALUES ('$name', '$ivrs', 'Wrong Amount in Bill', '$Mob', '$address', '$complain')";
+        $query    = "INSERT INTO `complaint` (`Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`) VALUES ('$name', '$user', 'Wrong Amount in Bill', '$Mob', '$address', '$complain')";
         if (mysqli_query($con, $query)) {
             echo '<script>';
             echo 'alert("Complaint Registered Successfully");';

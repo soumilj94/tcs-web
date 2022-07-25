@@ -1,12 +1,10 @@
 <?php
     require('connection.php');
     session_start();
+    $user = $_SESSION['ivrs'];
     isset($_POST['name']);
     $name = stripslashes($_REQUEST['name']);
     $name = mysqli_real_escape_string($con, $name);
-    isset($_POST['IVRS']);    
-    $ivrs = stripslashes($_REQUEST['IVRS']);
-    $ivrs = mysqli_real_escape_string($con, $ivrs);
     isset($_POST['mobile']);
     $Mob = stripslashes($_REQUEST['mobile']);
     $Mob = mysqli_real_escape_string($con, $Mob);

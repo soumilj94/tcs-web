@@ -1,98 +1,204 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #232425;
 }
-.sidebar{
+a:link{
+    color: #00DCFF;
+    text-decoration: none;
+    -webkit-user-drag: none;
+}
+a:hover{
+    color: #FFFFFF;
+}
+a:visited{
+    color: #00DCFF;
+}
+a:active{
+    color: #378dff;
+}
+.header-one{
+    /* border: 1px solid #FFFFFF; */
+    width: 100%;
+    height: 4vh;
+}
+.logo{
+    /* border: 1px solid white; */
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    margin-left: 40px;
+}
+.action{
+    position: fixed;
+    top: 50px;
+    right: 40px;
+}
+.action .profile{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.action .profile img{
     position: absolute;
-    border: 1px solid black;
-    width: 240px;
-    height: 611px;
-    top: 107px;
-    left: -6px;
-    border-radius: 7px;
-    display:flex;
-    justify-content: centre;
-    align-items: centre;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
+.action .menu{
+    position: absolute;
+    top: 120px;
+    right: -10px;
+    padding: 10px 0px;
+    background: #00373f;
+    width: 200px;
+    box-sizing: 0 5px 25px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 250ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.action .menu.active{
+    top: 80px;
+    visibility: visible;
+    opacity: 1;
+}
+.action .menu::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 28px;
+    width: 20px;
+    height: 20px;
+    background: #00373f;
+    transform: rotate(45deg);
+}
+.action .menu ul li{
+    list-style: none;
+    padding: 10px 0px;
+    display: flex;
+    font-family: 'Oxanium';
+    font-size: 20px;
+    align-items: center;
+}
+.action .menu ul li img{
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.5;
+    transition: 250ms;
+}
+.action .menu ul li:hover img{
+    opacity: 1;
+}
+.action .menu ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 250ms;
+}
+.action .menu ul li:hover a{
+    color: #00DCFF;
+}
+
+
 .search_container{
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    /* border: 1px solid white; */
+    width: fit-content;
+    margin-left: 800px;
+    margin-top: -100px;
 }
 .search{
     background-color: transparent;
     border-left: none;
     border-right: none;
     border-top: none;
-    border-bottom: 2px solid #FF0053;
+    border-bottom: 1px solid #FFFFFF;
     font-size: 30px;
-    font-family: 'oxanium';
-    color: #FF0053;
+    font-family: 'Oxanium';
+    color: #00DCFF;
     text-transform: lowercase;
     outline: none;
-    caret-color: #FF0053;
-    width: 12em;
+    caret-color: #00DCFF;
+    width: 400px;
+    transition: 250ms ease-in-out;
+}
+.search:hover{
+    border-bottom: 1px solid #00DCFF;
 }
 .search:focus{
-    border-bottom: 3px solid #FF0053;
+    border-bottom: 3px solid #00DCFF;
 }
 input::placeholder{
-    font-size: 20px;
+    font-size: 22px;
     text-transform: none;
+    font-family: 'Oxanium';
+    color: white;
 }
 
 .card-menu{
+    /* border: 1px solid white; */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30vh, 1fr));
-    grid-gap: 5vh;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 0fr));
+    grid-gap: 50px;
     list-style-type: none;
-    padding-left: 30em;
-    padding-top: 10vh;
-}
-a:link{
-    text-decoration: none;
-    color: #FF0053;
-}
-a:visited{
-    text-decoration: none;
-    color: #FF0053;
-}
-a:hover{
-    text-decoration: none;
-    color: blueviolet;
-}
-a:active{
-    text-decoration: none;
-    color: aqua;
+    margin-left: 400px;
+    margin-top: -600px;
 }
 .card{
     text-align: center;
     font-family: 'oxanium';
     text-decoration: none;
-    font-size: 25px;
+    font-size: 2.4vmin;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    width: 25vh;
-    height: 20vh;
+    border: 4px solid #00DCFF;
+    width: 250px;
+    height: 180px;
     border-radius: 1vh;
+    transition: 250ms ease-in-out;
 }
+.card:hover{
+    border: 4px solid #00373f;
+    background-color: #00373f;
+}
+.sidebar{
+    /* border: 1px solid white; */
+    margin-top: 250px;
+    margin-left: 50px;
+    width: fit-content;
+}
+
 .crd{
-    text-align: center;
-    font-family: 'oxanium';
-    text-decoration: none;
-    font-size: 25px;
-    cursor: pointer;
     display: flex;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    width: 200px;
+    height: 80px;
     justify-content: center;
     align-items: center;
-    width: 22vh;
-    height: 9vh;
-    border-radius: 1vh;
+    text-decoration: none;
+    margin-bottom: 50px;
+    font-family: 'Oxanium';
+    font-size: 24px;
+    transition: 200ms ease-in-out;
+    
 }
+.crd:hover{
+    background-color: #002e6346;
+    border: 1px solid #4e4e4e;
+    border-radius: 12px;
+}
+
 /* .jk{
     position: absolute;
     top: 100px;
@@ -227,13 +333,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   border: none;
   background: #f1f1f1;
 }
-
 /* When the inputs get focus, do something */
 /* .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
-
 /* Set a style for the submit/login button */
 /* .form-container .btn {
   background-color: #04AA6D;

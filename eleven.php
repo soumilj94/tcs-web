@@ -17,7 +17,7 @@
     $complain = stripslashes($_REQUEST['complain']);
     $complain = mysqli_real_escape_string($con, $complain);
 
-        $query    = "INSERT INTO `complaint` (`Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`) VALUES ('$name', '$ivrs', 'Theft of Electricity', '$Mob', '$address', '$complain')";
+        $query    = "INSERT INTO `complaint` (`Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`) VALUES ('$name', '$ivrs', 'Others', '$Mob', '$address', '$complain')";
         if (mysqli_query($con, $query)) {
             echo '<script>';
             echo 'alert("Complaint Registered Successfully");';

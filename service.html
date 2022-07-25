@@ -6,34 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="header-one"></div>
+    <img class="logo" src="./logo.png"/>
+    
+    <div class="action">
+    <div class="profile" onclick="menuToggle();">
+        <img src="./user.png"/>
+    </div>
+        <div class="menu">
+            <ul>
+            <a href="profile.php"><li>Profile</li></a>
+            <a href="history.php"><li>History</li></a>
+            <a href="login.php"><li>Logout</li></a>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.menu');
+            toggleMenu.classList.toggle('active');
+        }
+    </script>
+
     <div class="container">
         <div class="search_container"><input onkeyup="filter()" type="search" class="search" id="search" placeholder="Search..."></div>
-        <ul id="menu" class="card-menu">   
-            <li><div class="card"><a onclick="openForm()" href="javascript:opeForm();">No Electricity</a></div></li>
-            <li><div class="card"><a onclick="openForm1()" href="javascript:opeForm();">Short Circuit</a></div></li>
-            <li><div class="card"><a onclick="openForm2()" href="javascript:opeForm();">Voltage Issue</a></div></li>
-            <li><div class="card"><a onclick="openForm3()" href="javascript:opeForm();">Meter Issue</a></div></li>
-            <li><div class="card"><a onclick="openForm4()" href="javascript:opeForm();">Frequent Power Cut</a></div></li>
-            <li><div class="card"><a onclick="openForm5()" href="javascript:opeForm();">Street Light Issue</a></div></li>
-            <li><div class="card"><a onclick="openForm6()" href="javascript:opeForm();">Damaged Pole</a></div></li>
-            <li><div class="card"><a onclick="openForm7()" href="javascript:opeForm();">Meter Installation</a></div></li>
-            <li><div class="card"><a onclick="openForm8()" href="javascript:opeForm();">Wrong Bill Issued</a></div></li>
-            <li><div class="card"><a onclick="openForm9()" href="javascript:opeForm();">Wrong amount in Bill</a></div></li>
-            <li><div class="card"><a onclick="openForm10()" href="javascript:opeForm();">Electricity Fluctuation</a></div></li>
-            <li><div class="card"><a onclick="openForm11()" href="javascript:opeForm();">Theft of Electricity</a></div></li>
-        </ul>
+        <div class="sidebar">
+            <ul id="sidbr" class="side-bar">
+                <div class="crd"><a href="#">Power House</a></div>
+                <div class="crd"><a href="#">Feedback</a></div>
+                <div class="crd"><a href="about.html">About</a></div>
+                <div class="crd"><a href="contact.html">Contact</a></div>
+            </ul>
+        </div>
+        <div class="complaints">
+            <ul id="menu" class="card-menu">   
+                <li><div class="card"><a onclick="openForm()" href="javascript:opeForm();">No Electricity</a></div></li>
+                <li><div class="card"><a onclick="openForm1()" href="javascript:opeForm();">Short Circuit</a></div></li>
+                <li><div class="card"><a onclick="openForm2()" href="javascript:opeForm();">Voltage Issue</a></div></li>
+                <li><div class="card"><a onclick="openForm3()" href="javascript:opeForm();">Meter Issue</a></div></li>
+                <li><div class="card"><a onclick="openForm4()" href="javascript:opeForm();">Frequent Power Cut</a></div></li>
+                <li><div class="card"><a onclick="openForm5()" href="javascript:opeForm();">Street Light Issue</a></div></li>
+                <li><div class="card"><a onclick="openForm6()" href="javascript:opeForm();">Damaged Pole</a></div></li>
+                <li><div class="card"><a onclick="openForm7()" href="javascript:opeForm();">Meter Installation</a></div></li>
+                <li><div class="card"><a onclick="openForm8()" href="javascript:opeForm();">Wrong Bill Issued</a></div></li>
+                <li><div class="card"><a onclick="openForm9()" href="javascript:opeForm();">Wrong amount in Bill</a></div></li>
+                <li><div class="card"><a onclick="openForm10()" href="javascript:opeForm();">Electricity Fluctuation</a></div></li>
+                <li><div class="card"><a onclick="openForm11()" href="javascript:opeForm();">Other</a></div></li>
+            </ul>
+        </div>
     </div>
-    <div class="sidebar">
-        <ul id="sidbr" class="side-bar">
-            <div class="crd"><a href="#"">Power House</a></div>
-            <div class="crd"><a href="#">Contribute</a></div>
-        </ul>
-    </div>
-    <!-- <input class="jk" type="button" onclick="openForm()"/> -->
-
     <script type="text/javascript" src="search.js"></script>
+
 
     <div class="form-popup" id="myForm">
         <form class="form-container" action="zero.php">
@@ -42,7 +68,6 @@
             <span class="ivr">Name</span><br>
             <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-            <!-- <label for="psw"><b>Password</b></label> -->
             <span class="ivr">IVRS No.</span><br>
             <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" id="ivr" required><br>
 
@@ -57,9 +82,26 @@
 
             <button type="submit" class="btn">SUBMIT</button>
             <button type="button" class="back" onclick="closeForm()">BACK</button>
-            <!-- <button type="button" class="btn cancel" >Close</button> -->
+
         </form>
     </div>
+    <script>
+        document.querySelector('#search').addEventListener('input', filterList);
+        function filterList(){
+            const searchInput = document.querySelector('#search');
+            const filter = searchInput.value.toLowerCase();
+            const listItems = document.querySelectorAll('.card');
+
+            listItems.forEach((item) =>{
+                let text = item.textContent;
+                if(text.toLowerCase().includes(filter.toLowerCase())){
+                    item.style.display = '';
+                }else{
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
     </body>
 
     <script>
@@ -72,14 +114,13 @@
     }
     </script>
 
-<div class="form-popup" id="myForm1">
+ <div class="form-popup" id="myForm1">
     <form class="form-container" action="one.php">
         <b class="head">Short Circuit</b><br><br>
 
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -94,7 +135,7 @@
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm1()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -105,7 +146,7 @@ document.getElementById("myForm1").style.display = "block";
 function closeForm1() {
 document.getElementById("myForm1").style.display = "none";
 }
-</script>
+</script> -->
 
 <div class="form-popup" id="myForm2" >
     <form class="form-container" action="two.php">
@@ -114,7 +155,6 @@ document.getElementById("myForm1").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -129,7 +169,7 @@ document.getElementById("myForm1").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm2()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -149,7 +189,6 @@ document.getElementById("myForm2").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -164,7 +203,7 @@ document.getElementById("myForm2").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm3()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -184,7 +223,6 @@ document.getElementById("myForm3").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -199,7 +237,7 @@ document.getElementById("myForm3").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm4()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+      
     </form>
 </div>
 <script>
@@ -219,7 +257,6 @@ document.getElementById("myForm4").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -234,7 +271,7 @@ document.getElementById("myForm4").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm5()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -254,7 +291,6 @@ document.getElementById("myForm5").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -269,7 +305,7 @@ document.getElementById("myForm5").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm6()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -289,7 +325,6 @@ document.getElementById("myForm6").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -304,7 +339,7 @@ document.getElementById("myForm6").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm7()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -324,7 +359,6 @@ document.getElementById("myForm7").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -339,7 +373,7 @@ document.getElementById("myForm7").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm8()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -359,7 +393,6 @@ document.getElementById("myForm8").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -374,7 +407,7 @@ document.getElementById("myForm8").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm9()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -394,7 +427,6 @@ document.getElementById("myForm9").style.display = "none";
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -409,7 +441,7 @@ document.getElementById("myForm9").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm10()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
+
     </form>
 </div>
 <script>
@@ -424,12 +456,11 @@ document.getElementById("myForm10").style.display = "none";
 
 <div class="form-popup" id="myForm11">
     <form class="form-container"  action="eleven.php">
-        <b class="head">Theft of Electricty</b><br><br>
+        <b class="head">Other</b><br><br>
 
         <span class="ivr">Name</span><br>
         <input class="box" type="text" placeholder="Enter Name" name="name" required><br>
 
-        <!-- <label for="psw"><b>Password</b></label> -->
         <span class="ivr">IVRS No.</span><br>
         <input class="box" type="text" placeholder="Enter IVRS No." name="IVRS" required><br>
 
@@ -444,7 +475,6 @@ document.getElementById("myForm10").style.display = "none";
 
         <button type="submit" class="btn">SUBMIT</button>
         <button type="button" class="back" onclick="closeForm11()">BACK</button>
-        <!-- <button type="button" class="btn cancel" >Close</button> -->
     </form>
 </div>
 <script>
@@ -457,7 +487,5 @@ document.getElementById("myForm11").style.display = "none";
 }
 </script>
 
-
-    
 </body>
 </html>

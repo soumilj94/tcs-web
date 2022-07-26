@@ -24,7 +24,7 @@ session_start();
 // echo "Firstname: "." ".$_SESSION['ivrs']."<br>";
 $user = $_SESSION['ivrs'];
 
-$records = "SELECT `Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain` FROM `complaint` WHERE `IVRSNo.`= '$user';";
+$records = "SELECT `Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`, `status` FROM `complaint` WHERE `IVRSNo.`= '$user';";
 $result = mysqli_query($con,$records);
 $nfr = mysqli_num_rows($result);
 $arr = array();
@@ -40,6 +40,7 @@ foreach($arr as $value){
     $mob=$value['Mobile No.'];
     $address=$value['Address'];
     $complain=$value['complain'];
+    $status=$value['status'];
     echo("<tr>
     <th>$name</th>
     <th>$ivrs</th>
@@ -47,7 +48,7 @@ foreach($arr as $value){
     <th>$mob</th>
     <th>$address</th>
     <th>$complain</th>
-    <th></th>
+    <th>$status</th>
 </tr>");
 }
 

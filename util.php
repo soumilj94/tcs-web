@@ -1,7 +1,7 @@
 <?php
 require('connection.php');
 session_start();
-$records = "SELECT `Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain` FROM `complaint`;";
+$records = "SELECT `Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain` FROM `utility`;";
 $result = mysqli_query($con,$records);
 $nfr = mysqli_num_rows($result);
 $arr = array();
@@ -17,6 +17,7 @@ if($result){
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         
@@ -28,9 +29,10 @@ if($result){
                 <th class="">Mobile No.</th>
                 <th class="">Address</th>
                 <th class="">Complaint</th>
-                <th></th>
+                <th>Status</th>
             </tr>
             <?php
+            
             foreach($arr as $value){
                 $name=$value['Name'];
                 $ivrs=$value['IVRSNo.'];
@@ -44,9 +46,12 @@ if($result){
                 <th>$subject</th>
                 <th>$mob</th>
                 <th>$address</th>
-                <th>$complain</th>
-                <th><input type='checkbox' onclick='sub.php'></th>
-            </tr>");
+                <th>$complain</th>");
+                $_SESSION['IVRSNo.']=$ivrs;
+
+                 
+                echo "<th><a href='delet.php'>Succes</a></th>
+                            </tr>";
             }
             
             

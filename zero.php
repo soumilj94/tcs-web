@@ -16,7 +16,8 @@
     $complain = mysqli_real_escape_string($con, $complain);
 
         $query    = "INSERT INTO `complaint` (`Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`) VALUES ('$name', '$user', 'No Electricity', '$Mob', '$address', '$complain')";
-        if (mysqli_query($con, $query)) {
+        $reslt = "INSERT INTO `utility`(`Name`, `IVRSNo.`, `Subject`, `Mobile No.`, `Address`, `complain`) VALUES ('$name', '$user', 'No Electricity', '$Mob', '$address', '$complain')";
+        if (mysqli_query($con, $query) && mysqli_query($con,$reslt)) {
             echo '<script>';
             echo 'alert("Complaint Registered Successfully");';
             echo 'location = "service.html";';

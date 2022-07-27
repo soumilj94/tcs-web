@@ -7,12 +7,12 @@
     if (mysqli_query($con, $query)) {
         echo '<script>';
         echo 'alert("Cleared");';
-        echo 'location = "srch.php";';
+        echo 'location = "util.php";';
         echo '</script>';
     }else{
         echo '<script>';
         echo 'alert("Sorry !! Try Again");';
-        echo 'location = "srch.php";';
+        echo 'location = "util.php";';
         echo '</script>';
     }
-?>  
+?>
